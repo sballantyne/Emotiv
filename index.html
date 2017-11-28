@@ -34,15 +34,16 @@
 						<article class="thumb">
 							<html> 
 							  <head>
+							  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 							   <script type="text/javascript">
 								  google.charts.load('current');  // Note: No need to specify chart packages.
 								  function drawVisualization() {
 								    google.visualization.drawChart({
 								      "containerId": "visualization_div",
-								      "dataSourceUrl": "https://spreadsheets.google.com/a/google.com/tq?key=pCQbetd-CptGXxxQIG7VFIQ&pub=1",
-								      "query":"SELECT A,D WHERE D > 100 ORDER BY D",
-								      "refreshInterval": 5,
-								      "chartType": "Table",
+								      "dataSourceUrl": "https://docs.google.com/spreadsheets/d/1UX_oBcnSS9pl3ocxEnKKhBoXhjGgKPzUKHAeWW5-qXo/edit#gid=0",
+								      "query":"SELECT A,B,C,D",
+								      "refreshInterval": 2,
+								      "chartType": "ColumnChart",
 								      "options": {
 								        "alternatingRowStyle": true,
 								        "showRowNumber" : true
@@ -53,14 +54,36 @@
 								</script>
 							  </head>
 							  <body>
-							    <div id="chart_div" style="width: 100%; height: 300px;"></div>
+							    <div id="visualization_div" style="width: 100%; height: 300px;"></div>
 							  </body>
 							</html>
 						</article>
 						<article class="thumb">
-							<a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt="" /></a>
-							<h2>Aliquam ipsum sed dolore</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+							<html> 
+							  <head>
+							  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+							   <script type="text/javascript">
+								  google.charts.load('current');  // Note: No need to specify chart packages.
+								  function drawVisualization() {
+								    google.visualization.drawChart({
+								      "containerId": "visualization_div2",
+								      "dataSourceUrl": "https://docs.google.com/spreadsheets/d/1UX_oBcnSS9pl3ocxEnKKhBoXhjGgKPzUKHAeWW5-qXo/edit#gid=0",
+								      "query":"SELECT F,G",
+								      "refreshInterval": 2,
+								      "chartType": "PieChart",
+								      "options": {
+								        "alternatingRowStyle": true,
+								        "showRowNumber" : true
+								      }
+								   });
+								 }
+								google.charts.setOnLoadCallback(drawVisualization);
+								</script>
+							  </head>
+							  <body>
+							    <div id="visualization_div2" style="width: 100%; height: 300px;"></div>
+							  </body>
+							</html>
 						</article>
 						<article class="thumb">
 							<html>
@@ -123,8 +146,7 @@
 								      ]);
 
 								      var options = {
-								        title: 'Correlation between life expectancy, fertility rate ' +
-								               'and population of some world countries (2010)',
+								        title: 'BubbleChart Example',
 								        hAxis: {title: 'Life Expectancy'},
 								        vAxis: {title: 'Fertility Rate'},
 								        bubble: {
