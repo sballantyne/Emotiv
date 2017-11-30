@@ -43,12 +43,20 @@
 								    google.visualization.drawChart({
 								      "containerId": "visualization_div",
 								      "dataSourceUrl": "https://docs.google.com/spreadsheets/d/1UX_oBcnSS9pl3ocxEnKKhBoXhjGgKPzUKHAeWW5-qXo/edit#gid=0",
-								      "query":"SELECT A,B,C,D",
+								      "query":"SELECT A,B,C,D,E",
 								      "refreshInterval": 2,
 								      "chartType": "ColumnChart",
 								      "options": {
+				      					"hAxis" : {
+								          textPosition: 'none'
+								         },
+								         "vAxis" : {
+								          textPosition: 'none'
+								         },
+
 								        "alternatingRowStyle": true,
-								        "showRowNumber" : true
+								        "showRowNumber" : true,
+								        "title" : 'Mood Transitions'
 								      }
 								   });
 								 }
@@ -125,7 +133,7 @@
 
 						<!-- Bubble Chart - IN PROGRESS-->
 						<article class="thumb">
-							  <head class="image">
+							  <head>
 							  <script type="text/javascript" class="image" src="https://www.gstatic.com/charts/loader.js"></script>
 							   <script type="text/javascript">
 								  google.charts.load('current');  // Note: No need to specify chart packages.
@@ -138,16 +146,21 @@
 								      "chartType": "BubbleChart",
 								      "options": {
 								        "title" : 'Emotion Map',
+								        "axisTitlesPosition" : 'none',
+								        "hAxis" : {
+								          textPosition: 'none'
+								         },
+								         "vAxis" : {
+								          textPosition: 'none'
+								         },
 								        "legend" : {position: 'none'},
 								        "bubble" : {
 								          textStyle: {
 								            auraColor: 'none',
-								          },
-								        "hAxis" : {
-								        	textPosition: 'none',
-								        }
+								          }
+								         }
 								      }
-								   }});
+								   });
 								 }
 								google.charts.setOnLoadCallback(drawVisualization);
 								</script>
